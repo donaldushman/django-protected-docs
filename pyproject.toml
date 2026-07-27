@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-protected-docs"
+version = "0.1.0"
+description = "Serve built documentation to authorized Django users."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "django-protected-docs contributors" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
+    "Framework :: Django :: 6.0",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = ["Django>=4.2,<6.1"]
+
+[project.urls]
+Homepage = "https://github.com/donaldushman/django-protected-docs"
+Repository = "https://github.com/donaldushman/django-protected-docs.git"
+Issues = "https://github.com/donaldushman/django-protected-docs/issues"
+
+[project.optional-dependencies]
+test = ["coverage[toml]>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["protected_docs*"]
+
+[tool.coverage.run]
+branch = true
+source = ["protected_docs"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
