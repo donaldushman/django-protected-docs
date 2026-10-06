@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-protected-docs"
-version = "0.1.0"
+version = "0.1.1"
 description = "Serve built documentation to authorized Django users."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -18,6 +18,7 @@ classifiers = [
     "Framework :: Django :: 5.1",
     "Framework :: Django :: 5.2",
     "Framework :: Django :: 6.0",
+    "Framework :: Django :: 6.1",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
@@ -25,7 +26,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
 ]
-dependencies = ["Django>=4.2,<6.1"]
+dependencies = ["Django>=4.2,<6.2"]
 
 [project.urls]
 Homepage = "https://github.com/donaldushman/django-protected-docs"

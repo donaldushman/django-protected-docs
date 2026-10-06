@@ -7,22 +7,37 @@ high-volume static web server.
 
 ## Installation
 
-Install the package:
+### Install from GitHub
 
-```console
-python -m pip install django-protected-docs
+Add to your `requirements.txt`:
+
+```text
+django-protected-docs @ git+https://github.com/donaldushman/django-protected-docs.git@v0.1.0
 ```
 
-Then add it to your Django project:
+Or install directly:
+
+```bash
+pip install git+https://github.com/donaldushman/django-protected-docs.git@v0.1.0
+```
+
+Using a tagged release is recommended for reproducible deployments.
+
+### Configure Django
+
+Add the app to `INSTALLED_APPS`:
 
 ```python
 # settings.py
+from pathlib import Path
+
 INSTALLED_APPS = [
     # ...
     "protected_docs",
 ]
 
-PROTECTED_DOCS_ROOT = BASE_DIR / "docs" / "_build" / "html"
+# Path(BASE_DIR) supports projects where BASE_DIR is either a string or a Path.
+PROTECTED_DOCS_ROOT = Path(BASE_DIR) / "docs" / "_build" / "html"
 PROTECTED_DOCS_ACCESS = "superuser"
 PROTECTED_DOCS_LOGIN_URL = "wagtailadmin_login"
 ```
